@@ -25,6 +25,15 @@ const App = () => {
 
     const startIndex = result.source.index;
     const endIndex = result.destination.index;
+
+    const copyArray = [...todos];
+    const [reorderItem] = copyArray.splice(startIndex, 1);
+    //console.log(reorderItem);
+
+    copyArray.splice(endIndex, 0, reorderItem);
+    console.log(copyArray);
+
+    setTodos(copyArray);
   };
 
   return (
